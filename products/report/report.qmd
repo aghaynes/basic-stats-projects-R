@@ -1,0 +1,43 @@
+---
+title: "Example"
+author:
+  - name: "Alan"
+    orcid: 111
+    email: "xxx@unibe.ch"
+    affiliation: "CTU Bern, University of Bern"
+format: 
+  html:
+    self-contained: true
+---
+
+```{r}
+#| include: false
+library(here)
+source(here("R", "00_main.R"))
+```
+
+Histogram of BMI per region
+
+
+```{r}
+#| echo: false
+#| message: false
+hist
+```
+
+
+Data:
+
+```{r}
+prepped |> 
+  slice_head(n = 20) |> 
+  gt() |> 
+  opt_interactive(use_filters = TRUE)
+```
+
+R session info
+
+```{r}
+sessionInfo()
+```
+
